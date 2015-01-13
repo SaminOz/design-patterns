@@ -38,7 +38,7 @@
 |
 */
 
-$route['default_controller'] = "observer";
+$route['default_controller'] = "decorator";
 $route['404_override'] = '';
 
 
