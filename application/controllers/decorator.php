@@ -15,13 +15,14 @@ class Decorator extends CI_Controller {
       'decaf'
     );
 
-    $selected = 'espresso';
+    $selected =  'espresso';
+    $data['selected'] = ucwords($selected);
     if( $this->input->post('data'))
     {
-      if( ! in_array(strtolower($this->input->post('data')), $permitted))
-        return FALSE;
-
-      $selected = str_replace(' ', '', strtolower($this->input->post('data')));
+      if( in_array(strtolower($this->input->post('data')), $permitted)) {
+        $selected = str_replace(' ', '', strtolower($this->input->post('data')));
+        $data['selected'] = $this->input->post('data');
+      }
     }
   
     $this->load->library($this->_pattern . $selected);
@@ -37,6 +38,7 @@ class Decorator extends CI_Controller {
       require_once(LIBPATH . 'decorator/steamedmilk.php');
     if( ! class_exists('Soy'))
       require_once(LIBPATH . 'decorator/soy.php');
+    
     $beverage = new Mocha( $beverage );
     $beverage = new Mocha( $beverage );
     $beverage = new Soy( $beverage );
@@ -44,7 +46,7 @@ class Decorator extends CI_Controller {
     $beverage = new Whip( $beverage );
 
     $data['php_output'] = array('beverage' => $beverage);
-    $data['js_output'] = '';//$this->load->view('js/' . $this->_pattern . 'observer.js', $data, TRUE);
+    $data['js_output'] = $this->load->view('js/' . $this->_pattern . 'decorator.js', $data, TRUE);
     $this->load->view(substr($this->_pattern, 0, (strlen($this->_pattern) - 1)), $data);
   }
 }

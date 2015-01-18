@@ -98,7 +98,7 @@
     </code>
 
     <p>JavaScript Output:</p>
-    <div>
+    <div data-beverage="<?=$selected?>" data-price"<?=$php_output['beverage']->cost()?>">
       <script>
       <?=$js_output?>
       </script>
