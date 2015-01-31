@@ -37,7 +37,10 @@
 | in the URL cannot be matched to a valid route.
 |
 */
-
+$route['/decorator'] = 'decorator';
+$route['/factory'] = 'factory';
+$route['/observer'] = 'observer';
+$route['/strategy'] = 'strategy';
 $route['default_controller'] = "decorator";
 $route['404_override'] = '';
 
