@@ -16,7 +16,7 @@ class ChicagoStylePizzaStore extends PizzaStore {
 
   public function createPizza( $type )
   {
-    return new ChicagoStyleCheesePizza();
+    return new $type();
   }
 
 }

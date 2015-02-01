@@ -127,11 +127,12 @@
     </code>
 
     <p>JavaScript Output:</p>
-    <div>
+    <div data-store="<?=$storeJs?>">
+      <code>
       <script>
       <?=$js_output?>
       </script>
-
+      </code>
     </div>
     <div id="hidden">
 

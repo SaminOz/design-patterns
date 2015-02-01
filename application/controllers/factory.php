@@ -27,6 +27,8 @@ class Factory extends CI_Controller {
 
     $this->load->library($this->_pattern . 'stores/' . $path);
 
+    $data['storeJs'] = $path;
+
     $this->load->helper('form');
     //example: new NYStylePizzaStore
     $pizzastore = new $path();
