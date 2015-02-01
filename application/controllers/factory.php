@@ -9,7 +9,7 @@ class Factory extends CI_Controller {
 
   public function index()
   {
-    $path = 'nystylepizzastore'; //default
+    $path = 'NYStylePizzaStore'; //default
     $choice = 'nystylecheesepizza'; //default
 
     $files = realpath(dirname('.')) . '/application/libraries/' . $this->_pattern . 'pizzas';
